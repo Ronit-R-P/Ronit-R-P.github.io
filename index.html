@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ronit Rajib Pattnaik</title>
+<meta name="description" content="Mechanical engineering student working on robotics, design and automation.">
+<script>(function(){var t;try{t=localStorage.getItem("theme")}catch(e){}document.documentElement.dataset.theme=t==="dark"?"dark":"light"})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef3fa; --card:#fbfdff; --ink:#0f1b2d; --body:#36445a; --mute:#64748b; --line:#cfdae9; --line2:#b6c6dd;
+  --navy:#1e4a8f; --onnavy:#fff; --chip:#e1eaf6; --tagline:#4f6a94; --navbg:rgba(238,243,250,.94); --rgb:30,74,143;
+  --head:'Outfit',system-ui,sans-serif; --text:'DM Sans',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+:root[data-theme=dark]{
+  --bg:#0a1220; --card:#0f1b30; --ink:#e8eefb; --body:#b2c0da; --mute:#7f90ad; --line:#1f3050; --line2:#34486b;
+  --navy:#7fb0ff; --onnavy:#0a1220; --chip:#15233d; --tagline:#8fa8d4; --navbg:rgba(10,18,32,.92); --rgb:127,176,255;
+}
+html.tx *,html.tx *::before,html.tx *::after{transition:background-color .3s,color .3s,border-color .3s!important}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--body);font-family:var(--text);font-size:17px;line-height:1.75}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
+.wrap{max-width:1170px;margin:0 auto;padding:0 24px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:var(--navbg);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:72px}
+.logo{font-family:var(--mono);font-size:14px;letter-spacing:.15em;color:var(--ink)}
+nav ul{display:flex;gap:36px;list-style:none;align-items:center}
+nav ul a{font-family:var(--mono);font-size:13px;letter-spacing:.12em;color:var(--body)}
+nav ul a:hover{color:var(--navy)}
+
+/* hero */
+.hero{position:relative;padding:96px 0 110px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:48px 48px;opacity:.35;
+  -webkit-mask-image:radial-gradient(ellipse at 75% 40%,#000 0%,transparent 65%);mask-image:radial-gradient(ellipse at 75% 40%,#000 0%,transparent 65%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
+.tag{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:13px;letter-spacing:.2em;color:var(--body);margin-bottom:28px}
+.tag::before{content:"";width:30px;height:1px;background:var(--mute)}
+h1{font-family:var(--head);font-weight:800;font-size:clamp(52px,8vw,100px);line-height:1.02;letter-spacing:-.03em;color:var(--ink)}
+.tagline{font-family:var(--text);font-style:italic;font-size:clamp(19px,2.3vw,26px);color:var(--tagline);line-height:1.5;margin:34px 0 22px;max-width:560px}
+.intro{max-width:540px;margin-bottom:38px}
+.btns{display:flex;flex-wrap:wrap;gap:14px}
+.btn{font-family:var(--mono);font-size:13px;letter-spacing:.1em;padding:15px 26px;border:1px solid var(--line);background:var(--card);color:var(--body);transition:background .15s,color .15s,border-color .15s}
+.btn:hover{border-color:var(--navy);color:var(--navy)}
+.btn.primary{background:var(--navy);border-color:var(--navy);color:var(--onnavy);font-weight:500}
+.btn.primary:hover{filter:brightness(1.15);color:var(--onnavy)}
+.photo{justify-self:center;width:min(300px,70vw);aspect-ratio:1;border-radius:50%;overflow:hidden;background:var(--chip);box-shadow:0 20px 50px rgba(var(--rgb),.15);display:grid;place-items:center}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo span{font-family:var(--head);font-weight:700;font-size:72px;color:var(--navy)}
+
+/* sections */
+section{padding:56px 0 72px}
+.label{display:flex;align-items:center;gap:20px;font-family:var(--mono);font-size:13px;letter-spacing:.2em;color:var(--body);margin-bottom:56px}
+.label::after{content:"";flex:1;height:1px;background:var(--line)}
+h3{font-family:var(--head);font-weight:600;font-size:24px;color:var(--ink);line-height:1.3}
+.meta{font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--mute)}
+
+/* experience */
+.job{display:grid;grid-template-columns:230px 1fr;gap:32px;padding:38px 0;border-bottom:1px solid var(--line)}
+.job:first-of-type{padding-top:0}
+.job .org{font-family:var(--mono);font-size:13px;letter-spacing:.08em;color:var(--body);margin-bottom:6px}
+.job ul{margin-top:14px;padding-left:20px}
+.job li{margin-bottom:8px;font-size:16px}
+
+/* cards */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:36px 36px 34px;display:flex;flex-direction:column}
+.card .kind{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--body);margin-bottom:18px}
+.card h3{margin-bottom:14px}
+.card p{font-size:16px;margin-bottom:22px}
+.spec{font-family:var(--mono);font-size:12.5px;line-height:1.9;color:var(--mute);border-top:1px solid var(--line);padding-top:14px;margin-top:auto;margin-bottom:22px}
+.spec b{color:var(--ink);font-weight:500}
+.media{aspect-ratio:16/9;background:var(--chip);border:1px dashed var(--line2);border-radius:4px;display:grid;place-items:center;margin-bottom:24px;font-family:var(--mono);font-size:12px;color:var(--mute);text-align:center;padding:12px;overflow:hidden}
+.media img,.media iframe{width:100%;height:100%;object-fit:cover;border:0}
+.card .btns .btn{padding:12px 20px;font-size:12px}
+
+/* patents */
+.rows .row{display:grid;grid-template-columns:230px 1fr;gap:32px;padding:30px 0;border-bottom:1px solid var(--line)}
+.rows .row:first-child{padding-top:0}
+.pill{display:inline-block;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;padding:3px 10px;background:var(--chip);border:1px solid var(--line);margin-top:8px}
+
+/* about */
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:64px}
+.about p{margin-bottom:22px}
+.side h4{font-family:var(--mono);font-size:13px;letter-spacing:.18em;color:var(--ink);margin-bottom:18px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:38px}
+.chips span{font-family:var(--mono);font-size:12.5px;padding:7px 14px;background:var(--chip);border:1px solid var(--line)}
+.side li{list-style:none;font-size:15px;margin-bottom:12px;padding-left:14px;border-left:2px solid var(--line)}
+
+footer{border-top:1px solid var(--line);padding:46px 0;text-align:center;font-family:var(--mono);font-size:13px;letter-spacing:.12em;color:var(--mute)}
+
+@media(max-width:860px){
+  nav ul{gap:18px}nav ul a{font-size:11.5px;letter-spacing:.06em}
+  .hero{padding:56px 0 70px}.hero .wrap{grid-template-columns:1fr}.dial{order:-1;justify-self:start;width:260px}
+  .job,.rows .row{grid-template-columns:1fr;gap:6px}
+  .grid,.about{grid-template-columns:1fr;gap:30px}
+  .card{padding:26px}
+}
+@media(max-width:520px){nav .logo{display:none}nav .wrap{justify-content:center}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* ---- mechanical layer ---- */
+.hero::before{opacity:1;background-image:linear-gradient(rgba(var(--rgb),.2) 1px,transparent 1px),linear-gradient(90deg,rgba(var(--rgb),.2) 1px,transparent 1px),linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:240px 240px,240px 240px,48px 48px,48px 48px}
+.dim{display:flex;align-items:center;gap:14px;max-width:560px;margin-top:28px;font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--navy)}
+.dim::before,.dim::after{content:"";flex:1;height:11px;background:linear-gradient(var(--navy),var(--navy)) center/100% 1px no-repeat,linear-gradient(var(--navy),var(--navy)) left/1px 100% no-repeat}
+.dim::after{background:linear-gradient(var(--navy),var(--navy)) center/100% 1px no-repeat,linear-gradient(var(--navy),var(--navy)) right/1px 100% no-repeat}
+.dial{position:relative;justify-self:center;width:min(390px,80vw);aspect-ratio:1}
+.dial .photo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:70%}
+.ring{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.ring .gear{transform-box:fill-box;transform-origin:center;animation:spin 120s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.label::before{content:"+";font-size:18px;color:var(--navy);margin-right:-4px}
+.card{border-radius:0;position:relative}
+.card::before,.card::after{content:"";position:absolute;width:16px;height:16px;border:2px solid var(--navy);pointer-events:none}
+.card::before{top:-1px;left:-1px;border-right:0;border-bottom:0}
+.card::after{bottom:-1px;right:-1px;border-left:0;border-top:0}
+.card .kind::before{content:"";display:inline-block;width:8px;height:8px;background:var(--navy);margin-right:10px}
+.media{border-radius:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:20px 20px}
+.spec{background:var(--bg);border:1px solid var(--line);padding:12px 16px}
+.btn{border-radius:0}
+.job .org::before{content:"";display:inline-block;width:7px;height:7px;border:1.5px solid var(--navy);margin-right:10px}
+/* cursor */
+#px{position:fixed;inset:0;pointer-events:none;z-index:40}
+.xh{position:fixed;left:0;top:0;width:0;height:0;pointer-events:none;z-index:50}
+.xh i{position:absolute;left:-36px;top:-36px;width:72px;height:72px;transition:transform .25s cubic-bezier(.3,1.4,.5,1),border-color .2s}
+.xh i::before,.xh i::after{content:"";position:absolute;background:var(--navy)}
+.xh i::before{left:0;right:0;top:50%;height:1px}
+.xh i::after{top:0;bottom:0;left:50%;width:1px}
+.xh.hot i{transform:rotate(45deg) scale(.55);border:1px solid var(--navy)}
+.xh b{position:absolute;left:44px;top:30px;font:500 11px var(--mono);letter-spacing:.1em;color:var(--navy);white-space:nowrap;background:var(--bg);padding:1px 6px;border:1px solid var(--line)}
+
+.ring{color:var(--navy)}
+.tg{display:block;width:50px;height:26px;border:1px solid var(--navy);background:var(--card);position:relative;cursor:pointer;padding:0;--kx:24px}
+.tg::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;background:var(--navy);transition:transform .25s cubic-bezier(.3,1.3,.5,1)}
+:root[data-theme=dark] .tg::after{transform:translateX(var(--kx))}
+.rail{position:fixed;right:14px;top:96px;bottom:24px;width:44px;display:none;flex-direction:column;z-index:20;color:var(--navy);pointer-events:none}
+.rail svg{display:block;width:44px;height:100%}
+@media(min-width:1240px){.rail{display:flex}}
+@media(max-width:520px){nav ul{gap:12px}nav ul a{font-size:10.5px;letter-spacing:0}.tg{width:40px;--kx:14px}}
+
+.hero .wrap{align-items:start}
+.hero .dial{margin-top:-8px}
+.links{display:grid;grid-template-columns:repeat(2,minmax(0,170px));gap:12px;margin-top:30px}
+.links .btn{text-align:center}
+.intro{margin-bottom:0}
+@media(max-width:860px){.hero .dial{margin-top:0}}
+
+.hero-r{justify-self:center;display:flex;flex-direction:column;align-items:center;gap:22px}
+.hero-r .dial{width:min(378px,78vw);margin-top:-8px}
+.hero-r .links{width:min(300px,78vw);grid-template-columns:repeat(2,1fr);margin-top:0}
+@media(max-width:860px){.hero-r{order:-1;justify-self:start;align-items:flex-start}.hero-r .dial{width:252px;margin-top:0}.hero-r .links{width:252px}}
+
+.card{padding:26px 28px 24px}
+.card .media{margin-bottom:18px}
+.card .kind{margin-bottom:12px}
+.card h3{font-size:22px;margin-bottom:10px}
+.card p{font-size:15.5px;line-height:1.65;margin-bottom:16px}
+.spec{font-size:12px;line-height:1.7;padding:7px 12px;margin-bottom:16px;border-top:1px solid var(--line)}
+.card .btns .btn{padding:10px 18px}
+.media:has(img){border-style:solid}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">R · P</a>
+    <ul>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#patents">Patents</a></li>
+      <li><a href="#about">About</a></li>
+      <li><button class="tg" id="theme" type="button" title="Switch light / dark" aria-label="Switch between light and dark mode"></button></li>
+    </ul>
+  </div>
+</nav>
+
+<aside class="rail" aria-hidden="true"><svg id="belt"></svg></aside>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <h1>Ronit<br>Rajib<br>Pattnaik</h1>
+      <div class="dim"><span>MECHANICAL · ROBOTICS · AUTOMATION</span></div>
+      <!-- EDIT: your tagline -->
+      <p class="tagline">I build robotic systems, and I make sure I understand the mathematics and mechanics that drive them.</p>
+      <!-- EDIT: your intro -->
+      <p class="intro">Engineering student working across mechanical design, robotics and reinforcement learning. From prosthetic hands to dexterous manipulation policies, I like to start from first principles before I build.</p>
+    </div>
+    <!-- EDIT: put your photo at assets/photo.jpg. Until then, initials show. -->
+    <div class="hero-r">
+    <div class="dial"><svg class="ring" viewBox="-200 -200 400 400" aria-hidden="true" id="ring"></svg><div class="photo">
+      <img src="assets/photo.jpg" alt="Portrait of Ronit Rajib Pattnaik" onerror="this.remove()">
+      <span aria-hidden="true">RP</span>
+    </div></div>
+    <div class="links">
+        <a class="btn primary" href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <a class="btn" href="https://github.com/Ronit-R-P" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/ronit-rajib-pattnaik-222674236/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="mailto:ronit.r.pattnaik3000@gmail.com">Email</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="label">EXPERIENCE</div>
+
+    <div class="job">
+      <div class="meta">Mar 2026 – Jun 2026</div>
+      <div>
+        <div class="org">Fastpeer AI Corps · South Plainfield, NJ, USA (Remote)</div>
+        <h3>Product &amp; Growth Intern</h3>
+        <ul>
+          <li>Set up documentation and reporting workflows for 5 AI products across a 10+ member engineering team, replacing fragmented communication channels.</li>
+          <li>Built early-stage growth operations: 15K+ organic impressions, lead pipelines across 4 U.S. states, and a CRM of 300+ qualified prospects.</li>
+          <li>Led product-quality tracking across 5 products, handling 5–10 bug reports a week.</li>
+          <li>Synthesized feedback from 3 product demonstrations, informing 25+ feature enhancements across web and mobile platforms.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="meta">Dec 2024 – Feb 2025</div>
+      <div>
+        <div class="org">Fx UAV · Bhubaneswar, India (On-site)</div>
+        <h3>Robotics &amp; Manufacturing Intern</h3>
+        <ul>
+          <li>Assembled and configured UAV systems on 3 flight-controller platforms: KK2.1.5, MiniPix and Pixhawk.</li>
+          <li>Used ArduPilot and Mission Planner for sensor calibration, parameter tuning, flight-mode setup and pre-flight verification.</li>
+          <li>Integrated receiver–transmitter communication, calibrated ESCs and validated channel mapping.</li>
+          <li>Recovered from a firmware failure by reflashing and restoring the system through Mission Planner.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="label">PROJECTS</div>
+    <div class="grid">
+
+      <article class="card">
+        <!-- EDIT: replace the placeholder with <img src="assets/hand.jpg" alt="..."> or a YouTube <iframe> -->
+        <div class="media"><img src="assets/hand.jpg" alt="3D-printed low-cost prosthetic hand with blue forearm" style="object-fit:contain"></div>
+        <div class="kind">Mechanical design · Biomedical</div>
+        <h3>Low-Cost Prosthetic Hand</h3>
+        <p>Designed for affordability and accessibility, and developed over 5 iterations into a working product. The PLA structure was validated with FEA before final design.</p>
+        <div class="spec">
+          <b>Tools</b> SolidWorks, FEA<br>
+          <b>Period</b> Jun – Dec 2025
+        </div>
+        <div class="btns">
+          <!-- EDIT: add your Doc Link and Visualize link -->
+          <a class="btn primary" href="https://drive.google.com/file/d/1rYEMD_XROXHCYfcWnskBBqF7a8X9Umwt/view" target="_blank" rel="noopener">View Document</a>
+          <a class="btn" href="https://ronit-r-p.github.io/Interactive-robot-hand/" target="_blank" rel="noopener">Visualize</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <!-- EDIT: paste your demo video. YouTube: <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe> -->
+        <div class="media"><img src="assets/rl.jpg" alt="Simulated dexterous hand grasping an object in MuJoCo"></div>
+        <div class="kind">Reinforcement learning · Robotics</div>
+        <h3>Dexterous Hand Manipulation</h3>
+        <p>A MuJoCo pipeline for continuous-control hand manipulation. Behavioral cloning initializes the policy and SAC refines it, using a multi-stage grasp and lift reward.</p>
+        <div class="spec">
+          <b>Tools</b> MuJoCo, SAC, Python<br>
+          <b>Period</b> Jul – Aug 2026
+        </div>
+        <div class="btns">
+          <a class="btn primary" href="https://github.com/Ronit-R-P/Reinforcement-Learning-for-Dexterous-Robotic-Hand-Manipulation" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/feed/update/urn:li:activity:7492849678657462272/" target="_blank" rel="noopener">Visualize</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="media">Add a render or photo of the arm with the hand<br>(assets/arm.jpg)</div>
+        <div class="kind">Robotics · Motion planning</div>
+        <h3>Motion Planning on a 5-DOF Robotic Arm</h3>
+        <p>Uses the patented humanoid hand as the end effector on a 5-degree-of-freedom robotic arm to explore motion planning, kinematics and manipulation. A base platform for upcoming tasks such as colour sorting.</p>
+        <div class="spec">
+          <b>Tools</b> ROS2, Gazebo, MoveIt<br>
+          <b>Period</b> Ongoing
+        </div>
+        <div class="btns">
+          <a class="btn primary" href="#" target="_blank" rel="noopener">View Document</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">Visualize</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="media"><img src="assets/wing.jpg" alt="CFD flow trajectories over an F1 front wing"></div>
+        <div class="kind">Aerodynamics · CFD</div>
+        <h3>F1 Front Wing Analysis</h3>
+        <p>An investigatory report analysing the aerodynamics of an F1 front wing, examining the drag force, lateral force and other forces acting on it.</p>
+        <div class="spec">
+          <b>Tools</b> CFD<br>
+          <b>Period</b> Dec 2025 – Feb 2026
+        </div>
+        <div class="btns">
+          <a class="btn primary" href="https://drive.google.com/file/d/1jybqOmkDn5e6P4hhIK-DhKPH6-RgnniG/view" target="_blank" rel="noopener">View Report</a>
+          <a class="btn" href="https://drive.google.com/file/d/1EglUF4pTn0_N_HrVya1u9-ItF_ep1jqk/view?usp=sharing" target="_blank" rel="noopener">Visualize</a>
+        </div>
+      </article>
+
+      <!-- EDIT: copy one <article class="card"> block above to add more projects -->
+    </div>
+  </div>
+</section>
+
+<section id="patents">
+  <div class="wrap">
+    <div class="label">PATENTS &amp; PAPERS</div>
+    <div class="rows">
+      <div class="row">
+        <div class="meta">Published · 27 Mar 2026</div>
+        <div>
+          <h3>Modular Robotic Hand</h3>
+          <p>Indian Patent Application No. 202631034393, published in the Indian Patent Journal (Vol. 13/2026).</p>
+          <span class="pill">Patent application</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="meta">Granted</div>
+        <div>
+          <h3>Modular Robotic Hand</h3>
+          <p>Indian Design Application No. 499872-001, accepted by the Indian Designs Registry.</p>
+          <span class="pill">Design registration</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="meta">Submitted · 2026</div>
+        <div>
+          <h3>Effect of Inlet Temperature of Jet Burner Using Syn-Gas</h3>
+          <p>Third author, research paper submitted for publication.</p>
+          <span class="pill">Research paper</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="label">ABOUT</div>
+    <div class="about">
+      <div>
+        <!-- EDIT: rewrite this in your own words -->
+        <p>I'm a B.Tech student at the Institute of Technical Education and Research, SOA, Bhubaneswar (2023–2027), with a CGPA of 9.46 through six semesters.</p>
+        <p>My interests sit between mechanical design, robotics and automation. When I work on a mechanism or a controller, I want to know why it behaves the way it does, so I spend time on the underlying mathematics before I build.</p>
+        <p>Beyond engineering, I speak at state-level forums and take part in innovation challenges and model diplomacy.</p>
+      </div>
+      <div class="side">
+        <h4>STACK</h4>
+        <div class="chips">
+          <span>SolidWorks</span><span>FEA</span><span>CFD</span><span>Python</span><span>MuJoCo</span><span>SAC</span><span>ArduPilot</span><span>Mission Planner</span><span>MySQL</span><span>Power BI</span>
+        </div>
+        <h4>HIGHLIGHTS</h4>
+        <ul>
+          <li>2x state-level speaker, Odisha Legislative Assembly; top 5 of 200+ in Viksit Bharat Youth Parliament 2025 and 2026</li>
+          <li>3x ideathon participant: XIM ICAIET 2025, Startup Odisha Hack the Future 2025, Synergy INNOVISION 2026</li>
+          <li>2x honorary mention: AIIMS ABMUN 2025, KIIT 2025</li>
+          <li>Founding member, GFG chapter</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Ronit Rajib Pattnaik · ronit.r.pattnaik3000@gmail.com
+</footer>
+
+<script>
+(function(){
+  // gear + tick ring
+  var r=document.getElementById('ring'),N=26,st=2*Math.PI/N,d='',i,a,P=function(R,t){return (R*Math.cos(t)).toFixed(1)+','+(R*Math.sin(t)).toFixed(1)};
+  for(i=0;i<N;i++){a=i*st;d+=(i?'L':'M')+P(176,a)+'L'+P(192,a+st*.18)+'L'+P(192,a+st*.42)+'L'+P(176,a+st*.6);}
+  var t='';for(i=0;i<72;i++){a=i*Math.PI/36;var L=i%6?4:10;t+='M'+P(166,a)+'L'+P(166-L,a);}
+  r.innerHTML='<g class="gear"><path d="'+d+'Z" fill="none" stroke="currentColor" stroke-opacity=".5" stroke-width="1.5"/></g>'
+   +'<circle r="166" fill="none" stroke="currentColor" stroke-opacity=".3"/><path d="'+t+'" stroke="currentColor" stroke-opacity=".55" fill="none"/>'
+   +'<path d="M-200 0H200M0 -200V200" stroke="currentColor" stroke-opacity=".35" stroke-dasharray="14 4 2 4" fill="none"/>';
+
+  // cursor: crosshair + pixel trail (mouse only)
+  if(!matchMedia('(pointer:fine)').matches||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var c=document.createElement('canvas');c.id='px';document.body.appendChild(c);
+  var x=c.getContext('2d'),S=16,cells={},rgb='30,74,143';function gr(){rgb=getComputedStyle(document.documentElement).getPropertyValue('--rgb').trim()||rgb}gr();document.addEventListener('themechange',gr);
+  function rs(){c.width=innerWidth;c.height=innerHeight}rs();addEventListener('resize',rs);
+  var h=document.createElement('div');h.className='xh';h.innerHTML='<i></i><b>X 0000 Y 0000</b>';document.body.appendChild(h);
+  var lab=h.querySelector('b'),tx=-100,ty=-100,cx=-100,cy=-100;
+  addEventListener('mousemove',function(e){
+    tx=e.clientX;ty=e.clientY;
+    cells[Math.floor(tx/S)+','+Math.floor(ty/S)]=1;
+    h.classList.toggle('hot',!!e.target.closest('a,button'));
+  });
+  document.addEventListener('mouseleave',function(){tx=ty=-200});
+  function f(n){return ('000'+Math.round(n)).slice(-4)}
+  (function loop(){
+    cx+=(tx-cx)*.2;cy+=(ty-cy)*.2;
+    h.style.transform='translate('+cx+'px,'+cy+'px)';
+    lab.textContent='X '+f(tx)+' Y '+f(ty);
+    x.clearRect(0,0,c.width,c.height);
+    for(var k in cells){var v=cells[k];if(v<.03){delete cells[k];continue}
+      var p=k.split(',');x.fillStyle='rgba('+rgb+','+(v*.35).toFixed(3)+')';x.fillRect(p[0]*S,p[1]*S,S,S);cells[k]=v*.93}
+    requestAnimationFrame(loop);
+  })();
+})();
+</script>
+<script>
+(function(){
+  // theme toggle
+  var b=document.getElementById('theme'),h=document.documentElement;
+  b.setAttribute('aria-pressed',h.dataset.theme==='dark');
+  b.addEventListener('click',function(){
+    var n=h.dataset.theme==='dark'?'light':'dark';
+    h.classList.add('tx');h.dataset.theme=n;
+    try{localStorage.setItem('theme',n)}catch(e){}
+    b.setAttribute('aria-pressed',n==='dark');
+    document.dispatchEvent(new Event('themechange'));
+    setTimeout(function(){h.classList.remove('tx')},400);
+  });
+  // chain loop wrapped around two gears, driven by scroll
+  var NS='http://www.w3.org/2000/svg',svg=document.getElementById('belt'),R=14.5,P0=2*Math.PI*R/10,cx=22,
+      links=[],gs=[],L,D,yT,yB,p,tick=0;
+  function mk(t,a){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);return e}
+  function gearBody(){
+    var N=10,st=2*Math.PI/N,d='',i,a,P=function(r,t){return (r*Math.cos(t)).toFixed(1)+','+(r*Math.sin(t)).toFixed(1)};
+    for(i=0;i<N;i++){a=i*st;d+=(i?'L':'M')+P(12,a)+'L'+P(17,a+st*.2)+'L'+P(17,a+st*.45)+'L'+P(12,a+st*.65);}
+    return '<path d="'+d+'Z" style="fill:var(--card)" stroke="currentColor" stroke-width="1.5"/><circle r="4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M0 -4V-9M0 4V9M-4 0H-9M4 0H9" stroke="currentColor" stroke-width="1.2"/>';
+  }
+  function pos(u){
+    var A=Math.PI*R,t;u=((u%L)+L)%L;
+    if(u<D)return[cx+R,yT+u,90];
+    u-=D;if(u<A){t=u/R;return[cx+R*Math.cos(t),yB+R*Math.sin(t),t*57.2958+90]}
+    u-=A;if(u<D)return[cx-R,yB-u,-90];
+    u-=D;t=Math.PI+u/R;return[cx+R*Math.cos(t),yT+R*Math.sin(t),t*57.2958+90];
+  }
+  function up(){
+    var s=scrollY*.3,i,q,rot=(-s/R*57.2958).toFixed(1);
+    for(i=0;i<links.length;i++){q=pos(i*p-s);links[i].setAttribute('transform','translate('+q[0].toFixed(1)+' '+q[1].toFixed(1)+') rotate('+q[2].toFixed(1)+')')}
+    gs.forEach(function(g){g.setAttribute('transform','rotate('+rot+')')});
+  }
+  function build(){
+    var H=svg.parentNode.clientHeight,i,N,g;
+    if(H<140)return;
+    svg.setAttribute('viewBox','0 0 44 '+H);svg.innerHTML='';links=[];gs=[];
+    yT=20;yB=H-20;D=yB-yT;L=2*D+2*Math.PI*R;N=Math.max(2,Math.round(L/P0/2)*2);p=L/N;
+    [yT,yB].forEach(function(y){var o=mk('g',{transform:'translate('+cx+' '+y+')'}),r=mk('g',{});r.innerHTML=gearBody();o.appendChild(r);svg.appendChild(o);gs.push(r)});
+    for(i=0;i<N;i++){
+      g=mk('g',{});
+      g.appendChild(i%2?mk('rect',{x:-3,y:-1.6,width:6,height:3.2,fill:'currentColor',opacity:.65})
+                      :mk('rect',{x:-5.5,y:-2.8,width:11,height:5.6,rx:2.8,fill:'none',stroke:'currentColor','stroke-width':1.3}));
+      svg.appendChild(g);links.push(g);
+    }
+    up();
+  }
+  function sched(){if(!tick){tick=1;requestAnimationFrame(function(){tick=0;up()})}}
+  addEventListener('scroll',sched,{passive:true});addEventListener('resize',build);addEventListener('load',build);build();
+})();
+</script>
+</body>
+</html>
