@@ -169,8 +169,8 @@ footer{border-top:1px solid var(--line);padding:46px 0;text-align:center;font-fa
 
 /* ---- Highlights carousel ---- */
 #highlights .hl{position:relative;margin-top:10px}
-#highlights .hl-stage{position:relative;height:540px;overflow:hidden;touch-action:pan-y;--step:365px}
-#highlights .hl-card{position:absolute;left:50%;top:50%;width:340px;height:420px;margin-left:-170px;transform:translate(calc(-50% + var(--offset,0px)),-50%) scale(var(--scale,1));opacity:var(--opacity,0);z-index:var(--layer,0);background:var(--card);color:var(--body);border:1px solid var(--line);border-radius:16px;padding:16px 16px 20px;cursor:pointer;pointer-events:none;overflow:hidden;transition:transform .5s cubic-bezier(.3,.9,.3,1),opacity .4s,border-color .3s,box-shadow .3s;text-align:left}
+#highlights .hl-stage{position:relative;width:100%;max-width:1100px;margin-inline:auto;height:540px;overflow:hidden;touch-action:pan-y;--step:365px}
+#highlights .hl-card{position:absolute;left:50%;top:50%;width:340px;height:420px;transform:translate(calc(-50% + var(--offset,0px)),-50%) scale(var(--scale,1));opacity:var(--opacity,0);z-index:var(--layer,0);background:var(--card);color:var(--body);border:1px solid var(--line);border-radius:16px;padding:16px 16px 20px;cursor:pointer;pointer-events:none;overflow:hidden;transition:transform .5s cubic-bezier(.3,.9,.3,1),opacity .4s,border-color .3s,box-shadow .3s;text-align:left}
 #highlights .hl-card[data-p="0"]{--scale:1.06;--opacity:1;--layer:5;pointer-events:auto;border-color:var(--navy);box-shadow:0 24px 50px rgba(var(--rgb),.2);cursor:default}
 #highlights .hl-card[data-p="-1"],#highlights .hl-card[data-p="1"]{--scale:.88;--opacity:.86;--layer:4;pointer-events:auto}
 #highlights .hl-card[data-p="-2"],#highlights .hl-card[data-p="2"]{--scale:.72;--opacity:.4;--layer:3;pointer-events:auto}
@@ -197,8 +197,8 @@ footer{border-top:1px solid var(--line);padding:46px 0;text-align:center;font-fa
 #highlights .hl-dots button{width:22px;height:4px;border:0;border-radius:3px;background:var(--line2);cursor:pointer;padding:0;transition:background .2s,width .2s}
 #highlights .hl-dots button.on{background:var(--navy);width:36px}
 #highlights .hl :focus-visible{outline:2px solid var(--navy);outline-offset:3px}
-@media(max-width:700px){#highlights .hl-stage{--step:270px;height:490px}#highlights .hl-card{width:290px;height:390px;margin-left:-145px;padding:13px}#highlights .hl-img{height:215px}#highlights .hl-card[data-p="-2"],#highlights .hl-card[data-p="2"]{--opacity:0;pointer-events:none}#highlights .hl-arrow{width:38px;height:38px}#highlights .hl-meta{font-size:10px;gap:7px}}
-@media(max-width:520px){#highlights .hl-stage{height:455px}#highlights .hl-card{width:min(280px,76vw);height:370px;margin-left:min(-140px,-38vw)}#highlights .hl-img{height:195px}#highlights .hl-card h3{font-size:18px}#highlights .hl-foot{gap:12px}#highlights .hl-dots{gap:4px}#highlights .hl-dots button{width:13px}#highlights .hl-dots button.on{width:24px}}
+@media(max-width:700px){#highlights .hl-stage{--step:270px;height:490px}#highlights .hl-card{width:290px;height:390px;padding:13px}#highlights .hl-img{height:215px}#highlights .hl-card[data-p="-2"],#highlights .hl-card[data-p="2"]{--opacity:0;pointer-events:none}#highlights .hl-arrow{width:38px;height:38px}#highlights .hl-meta{font-size:10px;gap:7px}}
+@media(max-width:520px){#highlights .hl-stage{height:455px}#highlights .hl-card{width:min(280px,76vw);height:370px}#highlights .hl-img{height:195px}#highlights .hl-card h3{font-size:18px}#highlights .hl-foot{gap:12px}#highlights .hl-dots{gap:4px}#highlights .hl-dots button{width:13px}#highlights .hl-dots button.on{width:24px}}
 @media(prefers-reduced-motion:reduce){#highlights .hl-card,#highlights .hl-dots button{transition:none}}
 
 </style>
@@ -579,7 +579,7 @@ footer{border-top:1px solid var(--line);padding:46px 0;text-align:center;font-fa
   });
   function rel(i){var d=((i-a)%n+n)%n;if(d>n/2)d-=n;return d}
   function render(){
-    var jumped=[];var step=Math.min(365,stage.clientWidth*.34);
+    var jumped=[];var step=Math.min(365,stage.clientWidth*.30);
     cards.forEach(function(c,i){
       var d=rel(i);if(prevPos[i]!==undefined&&Math.abs(d-prevPos[i])>3){c.classList.add('jump');jumped.push(c)}prevPos[i]=d;
       c.style.setProperty('--offset',(d*step)+'px');
